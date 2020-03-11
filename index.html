@@ -116,6 +116,8 @@
 <p>‘.’ Matches any single character.<br>‘*’ Matches zero or more of the preceding element.</p>
 </blockquote>
 <p>The matching should cover the entire input string (not partial).</p>
+<more>
+
 <p><strong>Note:</strong></p>
 <ul>
 <li>s could be empty and contains only lowercase letters a-z.</li>
@@ -124,15 +126,25 @@
 <p><strong>Example 1:</strong></p>
 <p>Input:    s = “aa”    p = “a”<br>Output: false<br>Explanation: “a” does not match the entire string “aa”.</p>
 <p><strong>Example 2:</strong></p>
-<p>Input:    s = “aa”    p = “a*”<br>Output: true<br>Explanation: ‘*’ means zero or more of the preceding element, ‘a’. Therefore, by repeating ‘a’ once, it becomes “aa”.</p>
+<p>Input:    s = “aa”    p = “a**”<br>Output: true<br>Explanation: ‘<em>‘\</em>means zero or more of the preceding element, ‘a’. Therefore, by repeating ‘a’ once, it becomes “aa”.</p>
 <p><strong>Example 3:</strong></p>
-<p>Input:    s = “ab”    p = “.*”<br>Output: true<br>Explanation: “.*” means “zero or more (*) of any character (.)”.</p>
+<p>Input:    s = “ab”    p = “.*“<br>Output: true<br>Explanation: “. *“means “zero or more (*) of any character (.)”.</p>
 <p><strong>Example 4:</strong></p>
-<p>Input:     s = “aab”    p = “c<em>a</em>b”<br>Output: true<br>Explanation: c can be repeated 0 times, a can be repeated 1 time. Therefore, it matches “aab”.</p>
+<p>Input:     s = “aab”    p = “c*a*b”<br>Output: true<br>Explanation: c can be repeated 0 times, a can be repeated 1 time. Therefore, it matches “aab”.</p>
 <p><strong>Example 5:</strong></p>
-<p>Input:    s = “mississippi”    p = “mis<em>is*p</em>.”<br>Output: false</p>
+<p>Input:    s = “mississippi”    p = “mis*is*p*.”<br>Output: false</p>
 </html>
 
+<p>s为被匹配的字符串，p为正则表达式，匹配s与p是否相等；</p>
+<p>首先考虑测试信息：</p>
+<ol>
+<li>len(s) == 0</li>
+<li>len(s) != 0<ul>
+<li>p以通配符开头</li>
+<li>p开头为字母</li>
+</ul>
+</li>
+</ol>
 
       
       <!-- reward -->
